@@ -40,6 +40,7 @@ Get Predictions: Once you've uploaded the image, click the "Detect Disease" butt
 The Tomato Disease Detector App will provide you with a JSON response containing the following information:
 
 -  -`"prediction"`: This field indicates the predicted class, which can be one of the following:
+
     -`"Tomato_Bacterial_spot"`: Indicates the presence of Bacterial Spot disease.
     -`"Tomato_Early_blight"`: Indicates the presence of Early Blight disease.
     -`"Tomato_Late_blight"`: Indicates the presence of Late Blight disease.
