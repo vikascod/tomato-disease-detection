@@ -39,18 +39,18 @@ Get Predictions: Once you've uploaded the image, click the "Detect Disease" butt
 
 The Tomato Disease Detector App will provide you with a JSON response containing the following information:
 
--  -`"prediction"`: This field indicates the predicted class, which can be one of the following:
+- `"prediction"`: This field indicates the predicted class, which can be one of the following:
 
-    -`"Tomato_Bacterial_spot"`: Indicates the presence of Bacterial Spot disease.
-    -`"Tomato_Early_blight"`: Indicates the presence of Early Blight disease.
-    -`"Tomato_Late_blight"`: Indicates the presence of Late Blight disease.
-    -`"Tomato_Leaf_Mold"`: Indicates the presence of Leaf Mold disease.
-    -`"Tomato_Septoria_leaf_spot"`: Indicates the presence of Septoria Leaf Spot disease.
-    -`"Tomato_Spider_mites_Two_spotted_spider_mite"`: Indicates the presence of Spider Mites disease.
-    -`"Tomato__Target_Spot"`: Indicates the presence of Target Spot disease.
-    -`"Tomato__Tomato_YellowLeaf__Curl_Virus"`: Indicates the presence of Yellow Leaf Curl Virus.
-    -`"Tomato__Tomato_mosaic_virus"`: Indicates the presence of Mosaic Virus.
-    -`"Tomato_healthy"`: Indicates that the tomato plant appears to be healthy.
+  -`"Tomato_Bacterial_spot"`: Indicates the presence of Bacterial Spot disease.
+  -`"Tomato_Early_blight"`: Indicates the presence of Early Blight disease.
+  -`"Tomato_Late_blight"`: Indicates the presence of Late Blight disease.
+  -`"Tomato_Leaf_Mold"`: Indicates the presence of Leaf Mold disease.
+  -`"Tomato_Septoria_leaf_spot"`: Indicates the presence of Septoria Leaf Spot disease.
+  -`"Tomato_Spider_mites_Two_spotted_spider_mite"`: Indicates the presence of Spider Mites disease.
+  -`"Tomato__Target_Spot"`: Indicates the presence of Target Spot disease.
+  -`"Tomato__Tomato_YellowLeaf__Curl_Virus"`: Indicates the presence of Yellow Leaf Curl Virus.
+  -`"Tomato__Tomato_mosaic_virus"`: Indicates the presence of Mosaic Virus.
+  -`"Tomato_healthy"`: Indicates that the tomato plant appears to be healthy.
 
 - `"confidence"`: This field provides a floating-point value representing the confidence level of the prediction. It indicates how certain the model is about its prediction, with higher values indicating greater confidence.
 
