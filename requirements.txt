@@ -1,0 +1,5 @@
+numpy
+fastapi
+uvicorn
+tensorflow
+opendatasets
