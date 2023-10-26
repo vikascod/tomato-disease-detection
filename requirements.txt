@@ -4,4 +4,4 @@ uvicorn
 tensorflow
 opendatasets
 pillow
-opendatasets
+python-multipart
