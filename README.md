@@ -13,7 +13,7 @@ Before running the Tomato Disease Detector API, ensure that you have the followi
 - Pillow (PIL, for image processing)
 - NumPy (for numerical operations)
 
-# You can install the dependencies from the `requirements.txt` file using the following command:
+## You can install the dependencies from the `requirements.txt` file using the following command:
 
     ```bash
     pip install -r requirements.txt
