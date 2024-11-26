@@ -1,7 +1,21 @@
 numpy
 fastapi
 uvicorn
-tensorflow
 opendatasets
 pillow
 python-multipart
+pandas 
+dvc
+mlflow==2.2.2
+notebook
+matplotlib
+seaborn
+python-box==6.0.2
+pyYAML
+tqdm
+ensure==1.0.2
+joblib
+gdown
+types-PyYAML
+scipy
+-e .
