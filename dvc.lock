@@ -1,0 +1,46 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/TomatoDisease/pipeline/data_ingestion_pipeline.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: edfc6d2c50aa26bd9c8941032db814ba
+      size: 448
+    - path: src/TomatoDisease/pipeline/data_ingestion_pipeline.py
+      hash: md5
+      md5: b73146d5549d5333f24da0a153bb4599
+      size: 1047
+    outs:
+    - path: artifacts/data_ingestion/PlantVillage
+      hash: md5
+      md5: fe176bed0c0c37b250ebaa49a125d8fc.dir
+      size: 342230723
+      nfiles: 20639
+  prepare_base_model:
+    cmd: python src/TomatoDisease/pipeline/prepare_base_model_pipeline.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: edfc6d2c50aa26bd9c8941032db814ba
+      size: 448
+    - path: src/TomatoDisease/pipeline/prepare_base_model_pipeline.py
+      hash: md5
+      md5: afe370e5e91552881ad5ddd514ebe5a6
+      size: 936
+    params:
+      params.yaml:
+        CLASSES: 2
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+        INCLUDE_TOP: false
+        LEARNING_RATE: 0.01
+        WEIGHTS: imagenet
+    outs:
+    - path: artifacts/prepare_base_model
+      hash: md5
+      md5: 612c75c490e823c968cede592af53fdd.dir
+      size: 118073464
+      nfiles: 2

@@ -1,4 +1,5 @@
 numpy
+tensorflow
 fastapi
 uvicorn
 opendatasets
