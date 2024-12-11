@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 from TomatoDisease.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
-from TomatoDisease.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig
+from TomatoDisease.entity.config_entity import DataIngestionConfig, EvaluationConfig, PrepareBaseModelConfig, TrainingConfig
 from TomatoDisease.utils.helper import create_directories, read_yaml
 
 
@@ -38,9 +38,42 @@ class ConfigurationManager:
             updated_base_model_path=Path(config.updated_base_model_path),
             params_image_size=self.params.IMAGE_SIZE,
             params_learning_rate=self.params.LEARNING_RATE,
-            params_include_top=self.params.INCLUDE_TOP,
-            params_weights=self.params.WEIGHTS,
             params_classes=self.params.CLASSES
         )
 
         return prepare_base_model_config
+
+    def get_training_config(self) -> TrainingConfig:
+        training = self.config.training
+        prepare_base_model = self.config.prepare_base_model
+        params = self.params
+        training_data = Path(self.config.data_ingestion.root_dir) / "PlantVillage"
+        create_directories([
+            Path(training.root_dir)
+        ])
+
+        training_config = TrainingConfig(
+            root_dir=Path(training.root_dir),
+            trained_model_path=Path(training.trained_model_path),
+            updated_base_model_path=Path(prepare_base_model.updated_base_model_path),
+            training_data=training_data,
+            params_epochs=params.EPOCHS,
+            params_batch_size=params.BATCH_SIZE,
+            params_is_augmentation=params.AUGMENTATION,
+            params_image_size=params.IMAGE_SIZE,
+            params_classes=params.CLASSES,
+            params_learning_rate=params.LEARNING_RATE
+        )
+
+        return training_config
+
+    # def get_evaluation_config(self) -> EvaluationConfig:
+    #     eval_config = EvaluationConfig(
+    #         path_of_model=Path(self.config.training.trained_model_path),
+    #         training_data=Path(self.config.data_ingestion.root_dir) / "PlantVillage",
+    #         mlflow_uri="https://dagshub.com/entbappy/Kidney-Disease-Classification-MLflow-DVC.mlflow",
+    #         all_params=self.params,
+    #         params_image_size=self.params.IMAGE_SIZE,
+    #         params_batch_size=self.params.BATCH_SIZE
+    #     )
+    #     return eval_config
