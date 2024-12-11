@@ -163,3 +163,6 @@ cython_debug/
 
 kaggle.json
 research
+
+cnn_trained_model.h5
+training
