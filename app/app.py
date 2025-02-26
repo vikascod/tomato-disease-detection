@@ -6,7 +6,7 @@ from tensorflow import keras
 
 app = FastAPI()
 
-model = keras.models.load_model('tomato_disease.h5')
+model = keras.models.load_model('app/tomato_disease.h5')
 
 def read_image(image):
     img = Image.open(io.BytesIO(image))
